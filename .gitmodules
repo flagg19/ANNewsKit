@@ -1,0 +1,12 @@
+[submodule "lib/NUIKit"]
+	path = lib/NUIKit
+	url = git://github.com/exalted/NUIKit.git
+[submodule "lib/JSONKit"]
+	path = lib/JSONKit
+	url = git://github.com/johnezang/JSONKit.git
+[submodule "lib/MBProgressHUD"]
+	path = lib/MBProgressHUD
+	url = git://github.com/jdg/MBProgressHUD.git
+[submodule "lib/SDWebImage"]
+	path = lib/SDWebImage
+	url = git://github.com/rs/SDWebImage.git
