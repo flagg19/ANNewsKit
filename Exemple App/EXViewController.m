@@ -38,8 +38,8 @@
 	// Do any additional setup after loading the view.
     
     // Initializing the channels that need any kind of setup
-    // FB
-    [ANNewsChannelFB setClientId:@"478213865537313" clientSecret:@"d55200caecd668d17650bc7752eff10d"];
+    // FB                                           
+    [ANNewsChannelFB setClientId:@"111111111111111" clientSecret:@"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"];
     
     // Makeing the datasorce start asking
     [self.newsKit reloadChannels];
