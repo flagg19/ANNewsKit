@@ -38,7 +38,8 @@
 	// Do any additional setup after loading the view.
     
     // Initializing the channels that need any kind of setup
-    // FB                                           
+    // FB
+#warning fake data, change it
     [ANNewsChannelFB setClientId:@"111111111111111" clientSecret:@"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"];
     
     // Makeing the datasorce start asking
@@ -121,10 +122,10 @@
 - (id<ANNewsChannelProtocol>)newsKit:(ANNewsKit *)newsKit channelForNumber:(NSUInteger)number
 {
     if (number%2) {
-        return [[ANNewsChannelTW alloc] initWithTWQuery:@"@apexnet OR #imortacci OR #apexnet OR @bocconi OR #bocconi"];
+        return [[ANNewsChannelTW alloc] initWithTWQuery:@"#github OR @github"];
     }
     else {
-        return [[ANNewsChannelFB alloc] initWithEntityType:FBEntityTypeUser entityId:@"1185713885"];
+        return [[ANNewsChannelFB alloc] initWithEntityType:FBEntityTypeUser entityId:@"50595864761"];
     }
 }
 
