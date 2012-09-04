@@ -79,6 +79,8 @@
     // Configure the cell...
     ANNewsItem *news = [self.newsKit.sortedNews objectAtIndex:indexPath.row];
     
+    cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.layer.cornerRadius = 10.0;
     cell.textLabel.text = news.text;
     cell.detailTextLabel.text = [self.dateFormatter stringFromDate:news.date];
     [cell.imageView setImageWithURL:[NSURL URLWithString:news.imageURL]
