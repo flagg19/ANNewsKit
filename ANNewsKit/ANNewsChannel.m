@@ -29,7 +29,7 @@
         return [responseData objectFromJSONData];
     }
     else {
-        DLog(@"Error %@",error.localizedDescription);
+        NSLog(@"Error %@",error.localizedDescription);
         return nil;
     }
 }
