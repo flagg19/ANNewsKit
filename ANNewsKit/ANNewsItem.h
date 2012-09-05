@@ -10,6 +10,7 @@
 
 @interface ANNewsItem : NSObject
 
+@property (nonatomic, retain) NSString *author;
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) NSString *imageURL;

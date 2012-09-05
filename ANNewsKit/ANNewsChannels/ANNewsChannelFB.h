@@ -8,7 +8,15 @@
 
 #import "ANNewsChannel.h"
 
+/*
+ * NOTE:
+ * At the moment types are not used, since the infos we take are the same
+ * for all types. The main reason for specifing a type was to help parse the
+ * response.
+ */
+
 typedef enum {
+    FBEntityTypeGeneric,
     FBEntityTypeUser,
     FBEntityTypeGroup,
     FBEntityTypePage,

@@ -31,7 +31,7 @@
 
 - (BOOL)refreshNews
 {
-    // Asking facebook api...
+    // Asking twitter api...
     NSString *requestString = [NSString stringWithFormat:
                                @"http://search.twitter.com/search.json?q=%@",
                                self.query];
@@ -59,6 +59,7 @@
         NSMutableArray *results = [NSMutableArray array];
         for (NSDictionary *row in [response objectForKey:@"results"]) {
             ANNewsItem *newNews = [[ANNewsItem alloc] init];
+            newNews.author = [row objectForKey:@"from_user"];
             newNews.text = [row objectForKey:@"text"];
             newNews.date = [df dateFromString:[row objectForKey:@"created_at"]];
             newNews.imageURL = [row objectForKey:@"profile_image_url"];
