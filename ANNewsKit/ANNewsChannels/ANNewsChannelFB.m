@@ -145,7 +145,10 @@ static NSString *_clientSecret;
     }
     else {
         // Invalid inputs
-        completion(nil, nil);
+        NSError *error = [[NSError alloc] initWithDomain:@"graph.facebook.com"
+                                                    code:0
+                                                userInfo:@{ NSLocalizedDescriptionKey : @"Invalid clientId or clientSecret" }];
+        completion(nil, error);
     }
 }
 
