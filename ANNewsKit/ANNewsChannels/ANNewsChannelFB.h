@@ -38,6 +38,7 @@ typedef void (^callBackBlock)(NSString *token, NSError* error);
 + (void)setAppToken:(NSString *)token;
 + (void)setClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret;
 
+- (id)initWithEntityId:(NSString *)entityId;
 - (id)initWithEntityType:(FBEntityType)entityType entityId:(NSString *)entityId;
 
 @end
