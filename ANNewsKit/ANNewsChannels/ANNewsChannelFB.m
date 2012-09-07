@@ -208,9 +208,13 @@ static NSString *_clientSecret;
 - (NSArray *)mapResponse:(id)response
 {
     if (response) {
-        // "2012-08-30T08:43:42+0000"
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+        // "2012-08-30T08:43:42+0000"        
+        static NSDateFormatter *df;
+        if (df == nil) {
+            df = [[NSDateFormatter alloc] init];
+            [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+            [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+        }
         
         NSMutableArray *results = [NSMutableArray array];
         for (NSDictionary* row in [response objectForKey:@"data"]) {
