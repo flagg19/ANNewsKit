@@ -210,11 +210,12 @@ static NSString *_clientSecret;
     if (response) {
         // "2012-08-30T08:43:42+0000"        
         static NSDateFormatter *df;
-        if (df == nil) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
             df = [[NSDateFormatter alloc] init];
             [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
             [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-        }
+        });
         
         NSMutableArray *results = [NSMutableArray array];
         for (NSDictionary* row in [response objectForKey:@"data"]) {

@@ -54,11 +54,12 @@
         // "Fri, 31 Aug 2012 12:44:54 +0000"
         // "EEE, dd MMM yyyy HH:mm:ss Z"
         static NSDateFormatter *df;
-        if (df == nil) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
             df = [[NSDateFormatter alloc] init];
             [df setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
             [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-        }
+        });
         
         NSMutableArray *results = [NSMutableArray array];
         for (NSDictionary *row in [response objectForKey:@"results"]) {
